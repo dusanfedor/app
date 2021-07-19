@@ -1,105 +1,72 @@
-import React, { useCallback, useEffect, useState } from "react";
-
+import React, { useState } from "react";
 import "../pages.css";
 
 function FirstPage() {
-  const [dogs, setDogs] = useState(null);
-  const [dad, setDad] = useState(null);
-  const [age, setAge] = useState(null);
-  const [live, setLive] = useState(null);
-  const [timer, setTimer] = useState(null);
-  const [day, setDay] = useState(null);
+  const [myColor, setMyColor] = useState("black");
 
-  function den() {
-    if (!day) {
-      const date = new Date().toLocaleDateString();
-      setDay(date);
-    } else setDay("");
-  }
-
-  function cas() {
-    if (!timer) {
-      const time = new Date().toLocaleTimeString();
-      const newtime = time;
-      setTimer(newtime);
-    } else setTimer("");
-  }
-
-  function zivotopis() {
-    if (!live) {
-      const opis =
-        " VZDĚLÁNÍ: SOU Stavebné, Košice ; automechanik / 1992 - 1995 ; KURZY A ŠKOLENÍ: Faurecia Slovakia GAP liderska akademia / 2012 - 2012 ; PRŮBĚH ZAMĚSTNÁNÍ: Na volné nozre -01.12.2020 - dosud, Programováni:  Vytvářim projekty na seskupení e-shopu kvůli znížení výdaju za reklamy. Vytvářim e-shopy, weby, blogy. Programuji v  Java script, CSS, PHP, v programu React app . Doprava a oprava s.r.o od 01.11.2019 - 30.11.2020, pozice Manažér , náplň -Zajišťování zakázak a zastupováni firmy na jednánich, vedení - evidense práce, docházky, hodnotení zaměstnanců, príprava podkladů pro mzdy, daňová evidece - podklady na účetníctvi, archivace výdaju a zisků, eliminace výdajů . Ideal automotiv Tachov od 2017 - 2019, Mistr ve výrobě = zajištění plynulé výroby, práce v excelu, zaznamenávání docházky, dohled nad dodržováním BOZP, podávání zpráv o produkci, rozvoj tím lídrou, zdokonalovaní pracovního procesu ve spolupráci s procesní inženýři . Faurecia Slovakia od 2011 - 2017, pozice: Production Manager náplň práce,  Zajištění plynulé výroby na svěřených projektech, přesuny informací vedení firmy, rozdělení objednávek na svěřené projekty práce v excelu, tvorba kontingenčných tabulek, grafu produkce, grafu scrapu grafu PPM, zaznamenávání docházkyteem tídrom, dohled nad dodržováním BOZP, podávání zpráv o produkci vedení firmy na bázi denních mítingu a návrhy na zlepšení nedustatku, vývoj team lídrou, zdokonalovaní výrobního procesu ve spolupráci s procesními inženýři. Faurecia Slovakia od 2010 - 2011, pozice= Gap líder";
-      setLive(opis);
-    } else setLive("");
-  }
-
-  function zacinam() {
-    if (!dogs) {
-      const syn = " syn:Ing.Juraj Bacovcin";
-      const dcera = "dcéra:Viki Fedorova;";
-      const máma = " máma:Najka Fedorova; ";
-      const family = máma + "" + "" + dcera + "" + "" + syn;
-
-      setDogs(family);
-    } else setDogs("");
-  }
-
-  function object() {
-    if (!dad) {
-      const firstName = "Dusan Fedor";
-      const fullName = firstName;
-
-      setDad(fullName);
-    } else setDad("");
-  }
-
-  function years() {
-    if (!age) {
-      const mojvek = "43";
-
-      setAge(mojvek);
-    } else setAge("");
-  }
+  const setRandomColor = () => {
+    const randomColor = "#" + (((1 << 24) * Math.random()) | 0).toString(16);
+    setMyColor(randomColor);
+  };
 
   return (
-    <div className="body">
-      <div className="sobota">{day}</div>
-      <div className="nedela">
-        <button onClick={den}>
-          <b>Dátum:</b>
-        </button>
+    <div className="body1" style={{ color: myColor }}>
+      <h1>"Bezradnost a nespokojenost jsou prvním předpoklady k pokroku"</h1>
+      <button className="button1" onClick={setRandomColor}>
+        <p id="chngClrBtnText">Change Color</p>
+      </button>
+      <div className="container">
+        <div className="row">
+          <nav className="col-md-auto navbar">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <a
+                  className="nav-link"
+                  href="https://www.facebook.com/Doprava.oprava"
+                >
+                  Stehovani
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="https://angel-wings19.webnode.cz">
+                  Whisky
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  className="nav-link"
+                  href="https://www.profesia.cz/cv_details.php?cv_id=2701471"
+                >
+                  Skušenosti
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  className="nav-link"
+                  href="https://stehovaci-prace9.webnode.cz"
+                >
+                  Stehovaci prace
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div className="col contentText">
+            React spatřil světlo světa v květnu 2013. Opensourcoval ho Facebook,
+            který ho už několik let před tím sám interně používal a vylepšoval.
+            Prvotní vydání se však dočkalo velkého výsměchu. Odezva byla tak
+            špatná, že Facebook chvíli uvažoval i o jeho stáhnutí. Terčem
+            kritiky se stalo především míchání "HTML a programování". Podobné
+            obavy nedávno vyjádřili i někteří prominentní čeští webaři. Postupně
+            se však ukázalo, že došlo k pouze nepochopení základního konceptu a
+            nejen FE vývojáři si začli rychle osvojovat a užívat nové
+            fundamenty, které React přinesl.
+            <p>
+              V případě , že Vás naše stránka zaujala neváhejte nas kontakovat
+            </p>
+          </div>
+        </div>
       </div>
-      <div className="quartz">{timer}</div>
-      <div className="oomega">
-        <button onClick={cas}>
-          <b>Čas:</b>
-        </button>
-      </div>
-      <div className="fullName">{dad}</div>
-      <div className="lastName">
-        <button onClick={object}>
-          <b>Meno</b>
-        </button>
-      </div>
-
-      <div className="numero">{age}</div>
-      <div className="rumero">
-        <button onClick={years}>
-          <b>Můj věk</b>
-        </button>
-      </div>
-      <div className="zivot">{live}</div>
-      <div className="zivotopis">
-        <button onClick={zivotopis}>
-          <b>Zivotopis</b>
-        </button>
-      </div>
-      <div className="result">{dogs}</div>
-      <div className="testing">
-        <button onClick={zacinam}>
-          <b>Moje rodina</b>
-        </button>
-      </div>
+      <h2>COPYRIGHT ©company</h2>
     </div>
   );
 }
