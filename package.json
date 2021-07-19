@@ -1,6 +1,6 @@
 {
-  "name": "sdw",
-  "homepage": "http://duskofedor.github.io/sdw",
+  "name": "app",
+  "homepage": "https://dusanfedor.github.io/app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
